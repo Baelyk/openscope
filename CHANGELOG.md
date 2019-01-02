@@ -1,5 +1,6 @@
 # 6.1.0 (February 1, 2019)
 ### New Features
+ - [#1234](https://github.com/openscope/openscope/issues/1234) - Add "toggle halo" command
 
 
 ### Bugfixes
