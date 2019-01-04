@@ -9,7 +9,7 @@
     "magnetic_north": 1.8,
     "ctr_radius": 80,
     "ctr_ceiling": 13000,
-    "initial_alt": 5000,
+    "initial_alt": 4000,
     "position": ["N50d01m18.38", "E008d33m23.24", "364ft"],
     "rr_radius_nm": 5.0,
     "rr_center": ["N50d01m18.38", "E008d33m23.24"],
@@ -810,6 +810,7 @@
         "ANEKI9F": {
             "icao": "ANEKI9F",
             "name": "Aneki Niner Foxtrot",
+
             "rwy": {
                 "EDDF25L": [["^DF135", "A08+"], "DF142"],
                 "EDDF25C": [["^DF134", "A08+"], "DF141"]
@@ -855,6 +856,7 @@
         "MARUN1K": {
             "icao": "MARUN1K",
             "name": "Marun One Kilo",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25L": []
             },
@@ -869,6 +871,7 @@
         "MARUN1W": {
             "icao": "MARUN1W",
             "name": "Marun One Whiskey",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25C": []
             },
@@ -897,6 +900,7 @@
         "MARUN4F": {
             "icao": "MARUN4F",
             "name": "Marun Four Foxtrot",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["DF235", "A08+"]],
                 "EDDF25C": [["DF234", "A08+"]]
@@ -913,6 +917,7 @@
         "MARUN4H": {
             "icao": "MARUN4H",
             "name": "Marun Four Hotel",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25L": []
             },
@@ -941,6 +946,7 @@
         "MARUN5E": {
             "icao": "MARUN5E",
             "name": "Marun Five Echo",
+            "altitude": 7000,
             "rwy": {
                 "EDDF07C": [["DF139", "A08+"]],
                 "EDDF07R": [["DF140", "A08+"]]
@@ -971,6 +977,7 @@
         "MARUN6G": {
             "icao": "MARUN6G",
             "name": "Marun Six Golf",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["DF235", "A08+"]],
                 "EDDF25C": [["DF234", "A08+"]]
@@ -987,6 +994,7 @@
         "MARUN6M": {
             "icao": "MARUN6M",
             "name": "Marun Six Mike",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25C": []
             },
@@ -1001,6 +1009,7 @@
         "MARUN6N": {
             "icao": "MARUN6N",
             "name": "Marun Six November",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["^DF135", "A08+"], ["DF165", "S220-"]],
                 "EDDF25C": [["^DF134", "A08+"], ["DF162", "S220-"]]
@@ -1017,6 +1026,7 @@
         "MARUN9D": {
             "icao": "MARUN9D",
             "name": "Marun Niner Delta",
+            "altitude": 5000,
             "rwy": {
                 "EDDF07C": [],
                 "EDDF07R": []
@@ -1032,6 +1042,7 @@
         "MTR4C": {
             "icao": "MTR4C",
             "name": "Metro Four Charlie",
+            "altitude": 5000,
             "rwy": {
                 "EDDF07C": [],
                 "EDDF07R": []
@@ -1047,6 +1058,7 @@
         "OBOKA1D": {
             "icao": "OBOKA1D",
             "name": "Oboka One Delta",
+            "altitude": 5000,
             "rwy": {
                 "EDDF07C": [],
                 "EDDF07R": []
@@ -1062,6 +1074,7 @@
         "OBOKA1E": {
             "icao": "OBOKA1E",
             "name": "Oboka One Echo",
+            "altitude": 5000,
             "rwy": {
                 "EDDF07C": [["DF139", "A08+"]],
                 "EDDF07R": [["DF140", "A08+"]]
@@ -1078,6 +1091,7 @@
         "OBOKA1G": {
             "icao": "OBOKA1G",
             "name": "Oboka One Golf",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["DF235", "A08+"]],
                 "EDDF25C": [["DF234", "A08+"]]
@@ -1094,6 +1108,7 @@
         "OBOKA1H": {
             "icao": "OBOKA1H",
             "name": "Oboka One Hotel",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25L": []
             },
@@ -1108,6 +1123,7 @@
         "OBOKA1K": {
             "icao": "OBOKA1K",
             "name": "Oboka One Kilo",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25L": []
             },
@@ -1122,6 +1138,7 @@
         "OBOKA1M": {
             "icao": "OBOKA1M",
             "name": "Oboka One Mike",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25C": []
             },
@@ -1136,6 +1153,7 @@
         "OBOKA1N": {
             "icao": "OBOKA1N",
             "name": "Oboka One November",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["^DF135", "A08+"], ["DF165", "S220-"]],
                 "EDDF25C": [["^DF134", "A08+"], ["DF162", "S220-"]]
@@ -1208,6 +1226,7 @@
         "OBOKA1W": {
             "icao": "OBOKA1W",
             "name": "Oboka One Whiskey",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25C": []
             },
@@ -1222,6 +1241,7 @@
         "RID3Q": {
             "icao": "RID3Q",
             "name": "Ried Three Quebec",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [],
                 "EDDF25C": []
@@ -1266,6 +1286,7 @@
         "SOBRA4P": {
             "icao": "SOBRA4P",
             "name": "Sobra Four Papa",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["^DF135", "A08+"]],
                 "EDDF25C": [["^DF134", "A08+"]]
@@ -1282,6 +1303,7 @@
         "SOBRA5F": {
             "icao": "SOBRA5F",
             "name": "Sobra Five Foxtrot",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["^DF135", "A08+"], "DF142"],
                 "EDDF25C": [["^DF134", "A08+"], "DF141"]
@@ -1329,6 +1351,7 @@
         "SOBRA6N": {
             "icao": "SOBRA6N",
             "name": "Sobra Six November",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["^DF135", "A08+"], ["DF165", "S220-"]],
                 "EDDF25C": [["^DF134", "A08+"], ["DF162", "S220-"]]
@@ -1402,6 +1425,7 @@
         "SULUS9F": {
             "icao": "SULUS9F",
             "name": "Sulus Niner Foxtrot",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["^DF135", "A08+"], "DF142"],
                 "EDDF25C": [["^DF134", "A08+"], "DF141"]
@@ -1418,6 +1442,7 @@
         "TAU4Q": {
             "icao": "TAU4Q",
             "name": "Taunus Four Quebec",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [],
                 "EDDF25C": []
@@ -1433,6 +1458,7 @@
         "TOBAK1K": {
             "icao": "TOBAK1K",
             "name": "Tobak One Kilo",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25L": []
             },
@@ -1447,6 +1473,7 @@
         "TOBAK1W": {
             "icao": "TOBAK1W",
             "name": "Tobak One Whiskey",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25C": []
             },
@@ -1475,6 +1502,7 @@
         "TOBAK4H": {
             "icao": "TOBAK4H",
             "name": "Tobak Four Hotel",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25L": []
             },
@@ -1489,6 +1517,7 @@
         "TOBAK5F": {
             "icao": "TOBAK5F",
             "name": "Tobak Five Foxtrot",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["DF235", "A08+"]],
                 "EDDF25C": [["DF234", "A08+"]]
@@ -1505,6 +1534,7 @@
         "TOBAK6M": {
             "icao": "TOBAK6M",
             "name": "Tobak Six Mike",
+            "altitude": 7000,
             "rwy": {
                 "EDDF25C": []
             },
@@ -1533,6 +1563,7 @@
         "TOBAK7G": {
             "icao": "TOBAK7G",
             "name": "Tobak Seven Golf",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["DF235", "A08+"]],
                 "EDDF25C": [["DF234", "A08+"]]
@@ -1563,6 +1594,7 @@
         "TOBAK8N": {
             "icao": "TOBAK8N",
             "name": "Tobak Eight November",
+            "altitude": 5000,
             "rwy": {
                 "EDDF25L": [["^DF135", "A08+"], ["DF165", "S220-"]],
                 "EDDF25C": [["^DF134", "A08+"], ["DF162", "S220-"]]
@@ -1579,6 +1611,7 @@
         "TOBAK9D": {
             "icao": "TOBAK9D",
             "name": "Tobak Niner Delta",
+            "altitude": 5000,
             "rwy": {
                 "EDDF07C": [],
                 "EDDF07R": []

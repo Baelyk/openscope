@@ -1,4 +1,4 @@
-# 6.1.0 (February 1, 2019)
+# 6.10.0 (February 1, 2019)
 ### New Features
 
 
@@ -6,7 +6,12 @@
 
 
 ### Enhancements & Refactors
+- [#1247](https://github.com/openscope/openscope/issues/1247) - Determine initial climb altitude from the SID
 - [#1286](https://github.com/openscope/openscope/issues/1286) - Update EDDF to AIRAC 1901
+
+# 6.9.1 (January 4, 2019)
+### Hotfixes
+- [#1284](https://github.com/openscope/openscope/issues/1284) - Fixes overflow issues with tests
 
 
 # 6.9.0 (January 1, 2019)
