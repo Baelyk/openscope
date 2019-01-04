@@ -6,6 +6,7 @@
 
 
 ### Enhancements & Refactors
+- [#1286](https://github.com/openscope/openscope/issues/1286) - Update EDDF to AIRAC 1901
 
 
 # 6.9.0 (January 1, 2019)
