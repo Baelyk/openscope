@@ -2366,7 +2366,7 @@
             "altitude": "",
             "speed": "",
             "method": "random",
-            "rate": 2,
+            "rate": 2.6,
             "airlines": [
                 ["aea", 1],
                 ["dlh/short", 60],
@@ -2383,7 +2383,7 @@
             "altitude": "",
             "speed": "",
             "method": "random",
-            "rate": 4,
+            "rate": 5.2,
             "airlines": [
                 ["dlh/cityline", 33],
                 ["dlh/short", 81]
@@ -2397,7 +2397,7 @@
             "altitude": "",
             "speed": "",
             "method": "random",
-            "rate": 3,
+            "rate": 3.9,
             "airlines": [
                 ["dlh/short", 81],
                 ["fin", 1],
@@ -2413,7 +2413,7 @@
             "altitude": "",
             "speed": "",
             "method": "random",
-            "rate": 7,
+            "rate": 9.1,
             "airlines": [
                 ["aca", 1],
                 ["baw", 3],
@@ -2434,7 +2434,7 @@
             "altitude": "",
             "speed": "",
             "method": "random",
-            "rate": 3,
+            "rate": 3.9,
             "airlines": [
                 ["afr/short", 8],
                 ["baw", 3],
@@ -2451,7 +2451,7 @@
             "altitude": "",
             "speed": "",
             "method": "random",
-            "rate": 6,
+            "rate": 7.8,
             "airlines": [
                 ["aee", 2],
                 ["amc", 1],
@@ -2482,7 +2482,7 @@
             "altitude": "",
             "speed": "",
             "method": "random",
-            "rate": 6,
+            "rate": 7.8,
             "airlines": [
                 ["cca", 3],
                 ["dlh", 81],
@@ -2500,7 +2500,7 @@
             "altitude": 31000,
             "speed": 280,
             "method": "random",
-            "rate": 4,
+            "rate": 5.2,
             "airlines": [
                 ["afl", 2],
                 ["ana", 1],
@@ -2510,7 +2510,7 @@
                 ["cao", 2],
                 ["cpa", 1],
                 ["dlh/eddf25R", 30],
-                ["gec/eddf25R", 15],
+                ["gec/eddf25R", 3],
                 ["hvn", 1],
                 ["kzr", 1]
 
@@ -2524,10 +2524,10 @@
             "altitude": 31000,
             "speed": 280,
             "method": "random",
-            "rate": 1,
+            "rate": 1.3,
             "airlines": [
                 ["dlh/eddf25L", 30],
-                ["gec/eddf25L", 15],
+                ["gec/eddf25L", 3],
                 ["abw/b747", 5]
             ]
         },
@@ -2539,12 +2539,12 @@
             "altitude": 33000,
             "speed": 250,
             "method": "random",
-            "rate": 2.5,
+            "rate": 3.25,
             "airlines": [
                 ["box", 10],
                 ["dlh/eddf25R", 35],
                 ["fin", 1],
-                ["gec/eddf25R", 15],
+                ["gec/eddf25R", 3],
                 ["lot", 2],
                 ["sas", 1]
             ]
@@ -2557,10 +2557,10 @@
             "altitude": 33000,
             "speed": 250,
             "method": "random",
-            "rate": 0.5,
+            "rate": 0.65,
             "airlines": [
                 ["dlh/eddf25L", 35],
-                ["gec/eddf25L", 15],
+                ["gec/eddf25L", 3],
                 ["kal/b747", 1],
                 ["tha/a380", 1],
                 ["cca/b747", 3]
@@ -2574,18 +2574,18 @@
             "altitude": 27000,
             "speed": 280,
             "method": "random",
-            "rate": 3,
+            "rate": 3.9,
             "airlines": [
                 ["aee", 1],
                 ["aic", 1],
                 ["aua", 1],
                 ["aza", 1],
-                ["box", 10],
-                ["dlh/eddf25R", 40],
+                ["box", 6],
+                ["dlh/eddf25R", 35],
                 ["eth", 1],
                 ["fcb", 1],
                 ["fdx", 3],
-                ["gec/eddf25R", 15],
+                ["gec/eddf25R", 3],
                 ["gfa", 1],
                 ["mgx", 1],
                 ["mld", 1],
@@ -2607,10 +2607,10 @@
             "altitude": 27000,
             "speed": 280,
             "method": "random",
-            "rate": 2,
+            "rate": 2.6,
             "airlines": [
                 ["dlh/eddf25L", 40],
-                ["gec/eddf25L", 15],
+                ["gec/eddf25L", 3],
                 ["sia/a380", 1],
                 ["uae/a380", 1]
             ]
@@ -2623,13 +2623,13 @@
             "altitude": 30000,
             "speed": 250,
             "method": "random",
-            "rate": 2,
+            "rate": 2.6,
             "airlines": [
                 ["box", 10],
                 ["cfg", 4],
                 ["dlh/cityline", 35],
                 ["ezy", 3],
-                ["gec/eddf25R", 15],
+                ["gec/eddf25R", 3],
                 ["kzr", 1],
                 ["rot", 2],
                 ["swr", 1]
@@ -2644,9 +2644,9 @@
             "altitude": 30000,
             "speed": 250,
             "method": "random",
-            "rate": 0.5,
+            "rate": 0.65,
             "airlines": [
-                ["gec/eddf25L", 15]
+                ["gec/eddf25L", 3]
 
             ]
         },
@@ -2658,7 +2658,7 @@
             "altitude": 20000,
             "speed": 300,
             "method": "random",
-            "rate": 5,
+            "rate": 6.5,
             "airlines": [
                 ["aca", 1],
                 ["baw", 3],
@@ -2668,7 +2668,7 @@
                 ["dal/long", 3],
                 ["dlh/eddf25R", 40],
                 ["fdx/eddf25R", 3],
-                ["gec/eddf25R", 15],
+                ["gec/eddf25R", 3],
                 ["ice", 1],
                 ["klm", 1],
                 ["tui", 2],
@@ -2683,11 +2683,11 @@
             "altitude": 20000,
             "speed": 300,
             "method": "random",
-            "rate": 1,
+            "rate": 1.3,
             "airlines": [
                 ["dlh/eddf25L", 40],
                 ["fdx/eddf25L", 3],
-                ["gec/eddf25L", 15]
+                ["gec/eddf25L", 3]
             ]
         },
         {
@@ -2698,11 +2698,11 @@
             "altitude": 13000,
             "speed": 280,
             "method": "random",
-            "rate": 1,
+            "rate": 1.3,
             "airlines": [
                 ["afr", 8],
                 ["fdx/eddf25R", 3],
-                ["gec/eddf25R", 15]
+                ["gec/eddf25R", 3]
             ]
         },
         {
@@ -2713,7 +2713,7 @@
             "altitude": 14000,
             "speed": 300,
             "method": "random",
-            "rate": 3,
+            "rate": 3.9,
             "airlines": [
                 ["afr", 8],
                 ["baw", 4],
@@ -2721,7 +2721,7 @@
                 ["dlh/eddf25R", 65],
                 ["ein", 2],
                 ["fdx/eddf25R", 3],
-                ["gec/eddf25R", 15]
+                ["gec/eddf25R", 3]
             ]
         },
         {
@@ -2732,11 +2732,11 @@
             "altitude": 14000,
             "speed": 300,
             "method": "random",
-            "rate": 1,
+            "rate": 1.3,
             "airlines": [
                 ["dlh/eddf25L", 65],
                 ["fdx/eddf25L", 3],
-                ["gec/eddf25L", 15]
+                ["gec/eddf25L", 3]
             ]
         },
         {
@@ -2747,12 +2747,12 @@
             "altitude": 18000,
             "speed": 300,
             "method": "random",
-            "rate": 3,
+            "rate": 3.9,
             "airlines": [
                 ["cfg", 4],
                 ["dah", 1],
                 ["dlh/eddf25R", 50],
-                ["gec/eddf25R", 15],
+                ["gec/eddf25R", 3],
                 ["ibe", 1],
                 ["tam", 1],
                 ["tap", 1],
@@ -2767,10 +2767,10 @@
             "altitude": 18000,
             "speed": 300,
             "method": "random",
-            "rate": 0.5,
+            "rate": 0.65,
             "airlines": [
                 ["dlh/eddf25L", 50],
-                ["gec/eddf25L", 15]
+                ["gec/eddf25L", 3]
             ]
         }
     ],
