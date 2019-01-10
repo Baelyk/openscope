@@ -1,7 +1,11 @@
 import _has from 'lodash/has';
 import _isEmpty from 'lodash/isEmpty';
 import _isNaN from 'lodash/isNaN';
+import _padEnd from 'lodash/padEnd';
 import EventBus from '../lib/EventBus';
+import { round } from '../math/core';
+import { vadd } from '../math/vector';
+import { leftPad } from '../utilities/generalUtilities';
 import { EVENT } from '../constants/eventNames';
 import { INVALID_NUMBER } from '../constants/globalConstants';
 import { DECIMAL_RADIX } from '../utilities/unitConverters';
@@ -10,6 +14,10 @@ import {
     DATA_BLOCK_POSITION_MAP
 } from '../constants/scopeCommandConstants';
 import { THEME } from '../constants/themes';
+
+// TODO: abstract these to an appropriate constants file
+const HEAVY_LETTER = 'H';
+const SUPER_LETTER = 'J';
 
 /**
  * A single radar target observed by the radar system and shown on the scope
@@ -210,6 +218,15 @@ export default class RadarTargetModel {
         return this.aircraftModel.altitude;
     }
 
+
+    get scratchPadText() {
+        return this._scratchPadText;
+    }
+
+    set scratchPadText(text) {
+        this._scratchPadText = text.slice(0, 3).toUpperCase();
+    }
+
     /**
      * Complete initialization tasks
      *
@@ -239,13 +256,13 @@ export default class RadarTargetModel {
      * @chainable
      */
     _initializeScratchPad() {
-        if (!this.aircraftModel.destination) {
-            this._scratchPadText = 'XXX';
+        if (this.aircraftModel.isDeparture()) {
+            this.scratchPadText = this.aircraftModel.fms.getFlightPlanEntry();
 
             return this;
         }
 
-        this._scratchPadText = this.aircraftModel.destination.substr(1);
+        this.scratchPadText = this.aircraftModel.destination.substr(1, 3);
 
         return this;
     }
@@ -287,7 +304,6 @@ export default class RadarTargetModel {
         this._interimAltitude = INVALID_NUMBER;
         this._isUnderOurControl = true;
         this._routeString = '';
-        this._scratchPadText = '';
     }
 
     /**
@@ -301,6 +317,97 @@ export default class RadarTargetModel {
         this._cruiseAltitude = altitude;
 
         return [true, 'AMEND ALTITUDE'];
+    }
+
+    /**
+     * Generate a string to be used for the first row of a datablock
+     *
+     * @for RadarTargetModel
+     * @method buildDataBlockRowOne
+     * @returns {string}
+     */
+    buildDataBlockRowOne() {
+        let dataBlockRowOne = this.aircraftModel.callsign;
+
+        // NOTE: using empty space before the letter on purpose so this gets rendered
+        // appropriately within a canvas
+        switch (this.aircraftModel.model.weightClass) {
+            case SUPER_LETTER:
+                dataBlockRowOne += ` ${SUPER_LETTER}`;
+
+                break;
+            case HEAVY_LETTER:
+                dataBlockRowOne += ` ${HEAVY_LETTER}`;
+
+                break;
+            default:
+
+                break;
+        }
+
+        return dataBlockRowOne;
+    }
+
+    /**
+     * Generate a string to be used for the second row of a datablock
+     *
+     * @for RadarTargetModel
+     * @method buildDataBlockRowTwoPrimaryInfo
+     * @returns {string}
+     */
+    buildDataBlockRowTwoPrimaryInfo() {
+        const aircraftAltitude = round(this.aircraftModel.altitude / 100);
+        const aircraftSpeed = round(this.aircraftModel.groundSpeed / 10);
+
+        return `${leftPad(aircraftAltitude, 3)} ${leftPad(aircraftSpeed, 2)}`;
+    }
+
+    /**
+     * Generate a string to be used for the second row of a datablock
+     * when the timeshare section is active
+     *
+     * @for RadarTargetModel
+     * @method buildDataBlockRowTwoSecondaryInfo
+     * @returns {string}
+     */
+    buildDataBlockRowTwoSecondaryInfo() {
+        const paddedScratchPadText = _padEnd(
+            this.scratchPadText,
+            this._theme.DATA_BLOCK.SCRATCHPAD_CHARACTER_LIMIT,
+            ' '
+        );
+        const paddedAircraftModelIcao = _padEnd(
+            this.aircraftModel.model.icao.toUpperCase(),
+            this._theme.DATA_BLOCK.AIRCRAFT_MODEL_ICAO_CHARACTER_LIMIT,
+            ' '
+        );
+        const scratchPadText = paddedScratchPadText.slice(0, this._theme.DATA_BLOCK.SCRATCHPAD_CHARACTER_LIMIT);
+        const aircraftModelIcao = paddedAircraftModelIcao.slice(0, this._theme.DATA_BLOCK.AIRCRAFT_MODEL_ICAO_CHARACTER_LIMIT);
+
+        return `${scratchPadText} ${aircraftModelIcao}`;
+    }
+
+    /**
+     * Abstracts the math from the `CanvasController` used to determine
+     * where the center of a datablock should be located
+     *
+     * @param {number} leaderIntersectionWithBlock
+     */
+    calculateDataBlockCenter(leaderIntersectionWithBlock) {
+        const blockCenterOffset = {
+            ctr: [0, 0],
+            360: [0, -this._theme.DATA_BLOCK.HALF_HEIGHT],
+            45: [this._theme.DATA_BLOCK.HALF_WIDTH, -this._theme.DATA_BLOCK.HALF_HEIGHT],
+            90: [this._theme.DATA_BLOCK.HALF_WIDTH, 0],
+            135: [this._theme.DATA_BLOCK.HALF_WIDTH, this._theme.DATA_BLOCK.HALF_HEIGHT],
+            180: [0, this._theme.DATA_BLOCK.HALF_HEIGHT],
+            225: [-this._theme.DATA_BLOCK.HALF_WIDTH, this._theme.DATA_BLOCK.HALF_HEIGHT],
+            270: [-this._theme.DATA_BLOCK.HALF_WIDTH, 0],
+            315: [-this._theme.DATA_BLOCK.HALF_WIDTH, -this._theme.DATA_BLOCK.HALF_HEIGHT]
+        };
+        const leaderEndToBlockCenter = blockCenterOffset[this.dataBlockLeaderDirection];
+
+        return vadd(leaderIntersectionWithBlock, leaderEndToBlockCenter);
     }
 
     /**
@@ -381,7 +488,7 @@ export default class RadarTargetModel {
      * @return {array} [success of operation, system's response]
      */
     setScratchpad(scratchPadText) {
-        this._scratchPadText = scratchPadText;
+        this.scratchPadText = scratchPadText;
 
         return [true, 'SET SCRATCHPAD'];
     }

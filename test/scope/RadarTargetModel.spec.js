@@ -1,7 +1,12 @@
 import ava from 'ava';
 import EventBus from '../../src/assets/scripts/client/lib/EventBus';
 import RadarTargetModel from '../../src/assets/scripts/client/scope/RadarTargetModel';
-import { ARRIVAL_AIRCRAFT_MODEL_MOCK } from '../aircraft/_mocks/aircraftMocks';
+import {
+    ARRIVAL_AIRCRAFT_MODEL_MOCK,
+    ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY,
+    ARRIVAL_AIRCRAFT_MODEL_MOCK_SUPER,
+    DEPARTURE_AIRCRAFT_MODEL_MOCK
+} from '../aircraft/_mocks/aircraftMocks';
 import { INVALID_NUMBER } from '../../src/assets/scripts/client/constants/globalConstants';
 import { THEME } from '../../src/assets/scripts/client/constants/themes';
 
@@ -172,11 +177,18 @@ ava('._initializeScratchPad() sets #_scratchPadText to show aircraft\'s destinat
     t.true(model._scratchPadText === expectedValue);
 });
 
-ava('._initializeScratchPad() sets #_scratchPadText to "XXX" when aircraft has no destination', (t) => {
-    const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
-    const expectedValue = 'XXX';
+ava('._initializeScratchPad() sets #_scratchPadText to departure exit fix when aircraft is on departure route', (t) => {
+    const model = new RadarTargetModel(THEME.DEFAULT, DEPARTURE_AIRCRAFT_MODEL_MOCK);
+    const expectedValue = 'GUP';
 
-    model.aircraftModel.destination = undefined;
+    model._initializeScratchPad();
+
+    t.true(model._scratchPadText === expectedValue);
+});
+
+ava('._initializeScratchPad() sets #_scratchPadText to arrival airport when aircraft is on arrival route', (t) => {
+    const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
+    const expectedValue = 'LAS';
 
     model._initializeScratchPad();
 
@@ -199,4 +211,25 @@ ava('._setTheme() changes the value of #_theme', (t) => {
     model._setTheme(themeName);
 
     t.true(model._theme === THEME.CLASSIC);
+});
+
+ava('.buildDataBlockRowOne() creates correct first row for Large', (t) => {
+    const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK);
+    const expectedValue = 'AAL432';
+
+    t.true(model.buildDataBlockRowOne() === expectedValue);
+});
+
+ava('.buildDataBlockRowOne() creates correct first row for Heavy', (t) => {
+    const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK_HEAVY);
+    const expectedValue = 'UAL99 H';
+
+    t.true(model.buildDataBlockRowOne() === expectedValue);
+});
+
+ava('.buildDataBlockRowOne() creates correct first row for Super', (t) => {
+    const model = new RadarTargetModel(THEME.DEFAULT, ARRIVAL_AIRCRAFT_MODEL_MOCK_SUPER);
+    const expectedValue = 'UAE11 J';
+
+    t.true(model.buildDataBlockRowOne() === expectedValue);
 });
